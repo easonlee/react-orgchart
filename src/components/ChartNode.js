@@ -26,7 +26,10 @@ const ChartNode = ({
   collapsible,
   multipleSelect,
   changeHierarchy,
-  onClickNode
+  onClickNode,
+  draggable=false,
+  collapsible=true,
+  multipleSelect=false
 }) => {
   const node = useRef();
 
@@ -93,7 +96,7 @@ const ChartNode = ({
         ? parent.firstChild.classList.contains("hidden")
         : undefined;
     const isSiblingsCollapsed = Array.from(
-      node.parentNode.children
+      node.parentNode?.children
     ).some(item => item.classList.contains("hidden"));
 
     setTopEdgeExpanded(!isAncestorsCollapsed);
@@ -341,6 +344,6 @@ const ChartNode = ({
 };
 
 ChartNode.propTypes = propTypes;
-ChartNode.defaultProps = defaultProps;
+// ChartNode.defaultProps = defaultProps;
 
 export default ChartNode;
