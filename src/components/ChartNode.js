@@ -78,7 +78,7 @@ const ChartNode = ({
             setSelected(selectedNodeInfo.selectedNodeId === datasource.id);
           }
         } else {
-          setSelected(false);
+          setSelected(true);
         }
       });
 
@@ -100,16 +100,16 @@ const ChartNode = ({
     ).some(item => item.classList.contains("hidden"));
 
     setTopEdgeExpanded(!isAncestorsCollapsed);
-    setRightEdgeExpanded(!isSiblingsCollapsed);
-    setLeftEdgeExpanded(!isSiblingsCollapsed);
+    // setRightEdgeExpanded(!isSiblingsCollapsed);
+    // setLeftEdgeExpanded(!isSiblingsCollapsed);
     setBottomEdgeExpanded(!isChildrenCollapsed);
   };
 
   const removeArrows = () => {
     setTopEdgeExpanded(undefined);
-    setRightEdgeExpanded(undefined);
+    // setRightEdgeExpanded(undefined);
     setBottomEdgeExpanded(undefined);
-    setLeftEdgeExpanded(undefined);
+    // setLeftEdgeExpanded(undefined);
   };
 
   const toggleAncestors = actionNode => {
